@@ -7,6 +7,9 @@
 
 ![graphml viwere](https://media.giphy.com/media/LwkeSCUlNhOy3nM1as/giphy.gif)
 
+## 3D graph visualization:
+![3d Graph](https://media.giphy.com/media/IoKispirVCq6xKNRv7/giphy.gif)
+
 ## Load GraphMl
 1. Drag and drop multiple graphml files / click browse for files
 
@@ -47,7 +50,7 @@
 ## Remove graph
 ![remove graph](https://media.giphy.com/media/qKoFwiwOwsP9lMA3av/giphy.gif)
 
-## load and sitch between multiple graphml files
+## load and switch between multiple graphml files
 ![switch graphml](https://media.giphy.com/media/ZYgtaTloSPG9xuQKrP/giphy.gif)
 
 
