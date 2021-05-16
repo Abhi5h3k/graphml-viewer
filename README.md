@@ -40,10 +40,10 @@
 ## Export / view graph data (node data and edge data)
 ![export graph as table](https://media.giphy.com/media/QpnPqP4B8zozo0MtXL/giphy.gif)
 
-## Capture and Download graph images/ as json /graphml
+## Capture and Download graph images/ json /graphml
 ![export graph images or json or graphml](https://media.giphy.com/media/CtOE4N84ekyMgJ0Aw6/giphy.gif)
 
-## Using Lasso toom to select nodes and edges
+## Using Lasso tool to select nodes and edges
 1. Double click on empty graph area and start lasso drawing from 3rd click
 
 ![method one for lasso](https://media.giphy.com/media/Ikd3a4OT3qu9M1zv6P/giphy.gif)
