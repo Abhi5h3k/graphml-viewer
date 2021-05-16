@@ -10,6 +10,11 @@
 ## 3D graph visualization:
 ![3d Graph](https://media.giphy.com/media/IoKispirVCq6xKNRv7/giphy.gif)
 
+## Show node background Image:
+![node background image](https://media.giphy.com/media/CiGICN8sGsnuUOIKgU/giphy.gif)
+1. Require **image** key in node data with image url as value 
+2. You can download a sample GraphMl from [graphml viewer](http://graphml.abhishekbhardwaj.xyz/) to check how to modify graphml data for image and url
+
 ## Load GraphMl
 1. Drag and drop multiple graphml files / click browse for files
 
