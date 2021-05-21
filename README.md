@@ -10,6 +10,9 @@
 ## 3D graph visualization:
 ![3d Graph](https://media.giphy.com/media/IoKispirVCq6xKNRv7/giphy.gif)
 
+## Try multiple Layout
+![graph layouts](https://media.giphy.com/media/wNcpUmV4ocNXjffEUH/giphy.gif)
+
 ## Show node background Image:
 ![node background image](https://media.giphy.com/media/CiGICN8sGsnuUOIKgU/giphy.gif)
 1. Require **image** key in node data with image url as value 
