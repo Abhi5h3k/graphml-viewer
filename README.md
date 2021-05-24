@@ -18,6 +18,9 @@
 ## Hierarchical Layout
 ![Herarchical layout](https://media.giphy.com/media/sjc4dutBAFxEFsINsE/giphy.gif)
 
+## Spring layout with node color based on attribute
+![spring layout](https://media.giphy.com/media/jFe7C9zbDdIhbDyCeE/giphy.gif)
+
 ## change node shape:
 **Possible shapes :** "ellipse", "triangle", "round-triangle", "rectangle", "round-rectangle", "bottom-round-rectangle", "cut-rectangle", "barrel", "rhomboid", "diamond", "round-diamond", "pentagon", "round-pentagon", "hexagon", "round-hexagon", "concave-hexagon", "heptagon", "round-heptagon", "octagon", "round-octagon", "star", "tag", "round-tag", "vee"
 
