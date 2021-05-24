@@ -15,6 +15,20 @@
 ## Try multiple Layout
 ![graph layouts](https://media.giphy.com/media/wNcpUmV4ocNXjffEUH/giphy.gif)
 
+## Hierarchical Layout
+![Herarchical layout](https://media.giphy.com/media/sjc4dutBAFxEFsINsE/giphy.gif)
+
+## change node shape:
+**Possible shapes :** "ellipse", "triangle", "round-triangle", "rectangle", "round-rectangle", "bottom-round-rectangle", "cut-rectangle", "barrel", "rhomboid", "diamond", "round-diamond", "pentagon", "round-pentagon", "hexagon", "round-hexagon", "concave-hexagon", "heptagon", "round-heptagon", "octagon", "round-octagon", "star", "tag", "round-tag", "vee"
+
+1. Automatically from 24 node shapes
+
+![node shape](https://media.giphy.com/media/COodpc4lZRaUkSXB1Z/giphy.gif)
+
+2. Set from node data, need to have 'node_shape' key in node data
+
+![node shape from data](https://media.giphy.com/media/bGPlREECBu1DIHDzhZ/giphy.gif)
+
 ## Show node background Image:
 ![node background image](https://media.giphy.com/media/CiGICN8sGsnuUOIKgU/giphy.gif)
 1. Require **image** key in node data with image url as value 
