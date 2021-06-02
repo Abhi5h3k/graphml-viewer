@@ -5,7 +5,7 @@
 ![image](https://user-images.githubusercontent.com/37928721/119217835-8d4a9e00-bafa-11eb-9898-01e247c7ef67.png)
 
 ## Demo
-[graphml viewer](http://graphml.abhishekbhardwaj.xyz/)
+[graphml viewer](http://graphml.devabhi.in/)
 
 ![graphml viwere](https://media.giphy.com/media/LwkeSCUlNhOy3nM1as/giphy.gif)
 
