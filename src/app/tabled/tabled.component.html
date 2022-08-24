@@ -1,0 +1,40 @@
+<div *ngIf='data.dialog_type == 1'>
+  <h2 mat-dialog-title>{{data.heading}}</h2>
+  <mat-dialog-content>
+    <table id="elements" datatable [dtOptions]="dtOptions[0]" class="row-border hover">
+      <thead>
+        <tr>
+          <th *ngFor="let head of data.th">{{head}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of data.tr">
+          <td *ngFor="let cell of row">{{cell}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="mat-raised-button mat-accent" mat-dialog-close mat-dialog-close='true'>close</button>
+  </mat-dialog-actions>
+</div>
+<div *ngIf='data.dialog_type == 2'>
+  <h2 mat-dialog-title>{{data.heading}}</h2>
+  <mat-dialog-content>
+    <table id="connections" [dtOptions]="dtOptions[1]" datatable class="row-border hover">
+      <thead>
+        <tr>
+          <th *ngFor="let head of data.th">{{head}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of data.tr">
+          <td *ngFor="let cell of row">{{cell}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button class="mat-raised-button mat-accent" mat-dialog-close mat-dialog-close='true'>close</button>
+  </mat-dialog-actions>
+</div>

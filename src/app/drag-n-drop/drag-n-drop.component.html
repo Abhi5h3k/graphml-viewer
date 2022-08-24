@@ -1,0 +1,130 @@
+<div id="particles-js" class="row f-w-h">
+  <span class="typewriter">
+    <h1>
+      <a href="https://www.linkedin.com/in/abhi5h3k/" style="font-weight: bold; color: #db202f">Abhishek</a>
+      | Graphml viewer
+    </h1>
+  </span>
+  <div id="dnd" style="cursor: pointer" class="
+      col-sm-9
+      dropbox
+      text-center
+      grad
+      animate__animated
+      hvr-underline-from-center
+    " appDragNDrop (click)="fileInput.click()">
+    <!-- <span    style="right:0; bottom: 0; margin: 2em; position: absolute;"   ></span> -->
+    <!-- upload files icon (-->
+    <svg xmlns="http://www.w3.org/2000/svg" width="73" height="74" style="padding: 1em" viewBox="0 0 63 64">
+      <g fill="#3B454F" fill-rule="nonzero">
+        <path
+          d="M42.656 15.135a1.953 1.953 0 0 1-1.391-.578L31.5 4.795l-9.765 9.762a1.97 1.97 0 1 1-2.785-2.785L30.106.616a1.97 1.97 0 0 1 2.785 0l11.157 11.156a1.97 1.97 0 0 1-1.392 3.363z" />
+        <path
+          d="M31.5 36.791a1.97 1.97 0 0 1-1.969-1.969V2.01a1.97 1.97 0 0 1 3.938 0v32.812a1.97 1.97 0 0 1-1.969 1.969z" />
+        <path
+          d="M55.781 63.041H7.22A7.225 7.225 0 0 1 0 55.822V41.385a4.599 4.599 0 0 1 4.594-4.594h7.234a4.567 4.567 0 0 1 4.402 3.276l2.814 9.382a.658.658 0 0 0 .628.467h23.656a.658.658 0 0 0 .628-.467l2.814-9.385a4.572 4.572 0 0 1 4.402-3.273h7.234A4.599 4.599 0 0 1 63 41.385v14.437a7.225 7.225 0 0 1-7.219 7.219zM4.594 40.729a.656.656 0 0 0-.657.656v14.437a3.286 3.286 0 0 0 3.282 3.282H55.78a3.286 3.286 0 0 0 3.282-3.282V41.385a.656.656 0 0 0-.657-.656h-7.234a.65.65 0 0 0-.628.467L47.73 50.58a4.628 4.628 0 0 1-4.402 3.274H19.672a4.567 4.567 0 0 1-4.402-3.276l-2.814-9.382a.65.65 0 0 0-.628-.467H4.594z" />
+      </g>
+    </svg>
+    <input hidden type="file" #fileInput multiple (change)="fileChanged($event)" accept=".Graphml" />
+    <h3>Drag and drop files here</h3>
+    <h3>or</h3>
+    <label for="fileInput" class="hvr-wobble-top" style="cursor: pointer">Browse for file</label>
+    <h3>(Graphml)</h3>
+  </div>
+  <a style="text-decoration:none" href="https://www.linkedin.com/in/abhi5h3k/" class="
+      fa fa-linkedin
+      hvr-buzz-out
+      animate__animated animate__heartBeat animate__repeat-3
+    " style="
+      background: #007bb5;
+      color: white;
+      border-radius: 5px;
+      padding: 0.5em;
+      z-index: 100;
+      position: absolute;
+      right: 0;
+      margin: 2em;
+    "></a>
+  <a style="text-decoration:none" href="https://github.com/Abhi5h3k/graphml.abhishekbhardwaj.xyz" class="
+      fa fa-github
+      hvr-buzz-out
+      animate__animated animate__swing animate__repeat-3
+    " style="
+      background: #2a2b2c;
+      color: white;
+      border-radius: 5px;
+      padding: 0.5em;
+      z-index: 100;
+      position: absolute;
+      right: 0;
+      margin: 2em;
+      top : 0;
+      margin-top: 5em;
+    "></a>
+  <span class="animate__animated animate__pulse animate__repeat-3" (click)="downloadSampleGraphml()" style="
+      cursor: pointer;
+      font-size: x-small;
+      color: azure;
+      right: 0;
+      z-index: 100;
+      position: absolute;
+      margin: 2em 8em 3em;
+      bottom: 0;
+    ">Download Sample GraphML</span>
+  <button class="animate__animated animate__swing animate__infinite infinite" (click)="downloadSampleGraphml()"
+    mat-mini-fab color="primary" data-toggle="tooltip" data-placement="top" title="Download Sample GraphML" style="
+      z-index: 100;
+      position: absolute;
+      right: 0;
+      margin: 2em;
+      bottom: 0;
+    " aria-label="Example icon button with a menu icon">
+    <mat-icon>cloud_download</mat-icon>
+  </button>
+</div>
+
+
+<!-- Loading Screeen, processing Graphml -->
+<div *ngIf="uploading" style="
+    background-color: #333;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 90;
+  ">
+    <!-- Animation effect 1 -->
+  <div *ngIf="opt == 1" class="loading-window">
+    <div class="car">
+      <div class="strike"></div>
+      <div class="strike strike2"></div>
+      <div class="strike strike3"></div>
+      <div class="strike strike4"></div>
+      <div class="strike strike5"></div>
+      <div class="car-detail spoiler"></div>
+      <div class="car-detail back"></div>
+      <div class="car-detail center"></div>
+      <div class="car-detail center1"></div>
+      <div class="car-detail front"></div>
+      <div class="car-detail wheel"></div>
+      <div class="car-detail wheel wheel2"></div>
+    </div>
+    <div class="text">
+      <span>woking!! on it 😴</span><span class="dots">...</span>
+    </div>
+  </div>
+    <!-- Animation effect 2 -->
+  <div *ngIf="opt == 2">
+    <figure>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </figure>
+  </div>
+</div>

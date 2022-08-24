@@ -1,0 +1,483 @@
+.f-w-h {
+  width: 100vw;
+  height: 100vh;
+  background-image: url(../../assets/background.jpg);
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.dropbox {
+  position: absolute;
+  height: 50vh;
+  width: 60vw;
+  padding: 2rem;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-radius: 10px;
+}
+
+label {
+  color: white;
+  width: 183px;
+  height: 44px;
+  border-radius: 21.5px;
+  background-color: #db202f;
+  padding: 8px 16px;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #38424c;
+}
+
+.shakeit {
+  animation: shake 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    background: orange;
+    color: aqua;
+  }
+
+  100% {
+    background: black;
+    color: azure;
+  }
+}
+
+.typewriter {
+  float: left;
+  z-index: 100;
+  position: absolute;
+  left: 10%;
+  margin: 2em;
+}
+
+.typewriter h1 {
+  color: #fff;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: monospace;
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  margin: 0 auto;
+  letter-spacing: .15em;
+  animation:
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+
+  to {
+    width: 100%
+  }
+}
+
+@keyframes blink-caret {
+
+  from,
+  to {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: orange
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -3px) rotate(36deg);
+  }
+
+  20% {
+    transform: translate(-2px, 0px) rotate(72deg);
+  }
+
+  30% {
+    transform: translate(1px, 2px) rotate(108deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(144deg);
+  }
+
+  50% {
+    transform: translate(-1px, 3px) rotate(180deg);
+  }
+
+  60% {
+    transform: translate(-1px, 1px) rotate(216deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(252deg);
+  }
+
+  80% {
+    transform: translate(-2px, -1px) rotate(288deg);
+  }
+
+  90% {
+    transform: translate(2px, 1px) rotate(324deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(360deg);
+  }
+}
+
+@keyframes speed {
+  0% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+
+  10% {
+    transform: translate(-1px, -3px) rotate(-1deg);
+  }
+
+  20% {
+    transform: translate(-2px, 0px) rotate(1deg);
+  }
+
+  30% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+
+  50% {
+    transform: translate(-1px, 3px) rotate(-1deg);
+  }
+
+  60% {
+    transform: translate(-1px, 1px) rotate(0deg);
+  }
+
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+
+  80% {
+    transform: translate(-2px, -1px) rotate(1deg);
+  }
+
+  90% {
+    transform: translate(2px, 1px) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@keyframes strikes {
+  from {
+    left: 25px;
+  }
+
+  to {
+    left: -80px;
+    opacity: 0;
+  }
+}
+
+@keyframes dots {
+  from {
+    width: 0px;
+  }
+
+  to {
+    width: 15px;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+body {
+  background: #333;
+  font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
+}
+
+.fadeIn,
+.loading-window {
+  animation: fadeIn 0.4s both;
+}
+
+.loading-window {
+  background: #333;
+  border-radius: 6px;
+  border: 3px solid #ffe4e1;
+  color: #ffe4e1;
+  height: 200px;
+  left: 50%;
+  margin-left: -150px;
+  margin-top: -100px;
+  position: fixed;
+  top: 50%;
+  width: 300px;
+  z-index: 99;
+}
+
+.loading-window .text {
+  font-size: 16px;
+  position: absolute;
+  width: auto;
+  top: 75%;
+  left: 30%;
+  margin: 0 auto;
+}
+
+.loading-window .dots {
+  display: inline-block;
+  width: 5px;
+  overflow: hidden;
+  vertical-align: bottom;
+  animation: dots 1.5s linear infinite;
+  transition: 1;
+}
+
+.car {
+  position: absolute;
+  left: 92px;
+  top: 70px;
+}
+
+.car .strike {
+  position: absolute;
+  width: 11px;
+  height: 1px;
+  background: #ffe4e1;
+  animation: strikes 0.2s linear infinite;
+}
+
+.car .strike2 {
+  top: 11px;
+  animation-delay: 0.05s;
+  background-color: #db202f;
+}
+
+.car .strike3 {
+  top: 22px;
+  animation-delay: 0.1s;
+  background-color: yellowgreen;
+}
+
+.car .strike4 {
+  top: 33px;
+  animation-delay: 0.15s;
+  background-color: orangered;
+}
+
+.car .strike5 {
+  top: 44px;
+  animation-delay: 0.2s;
+}
+
+.car-detail {
+  position: absolute;
+  display: block;
+  background: #ffe4e1;
+  animation: speed 0.5s linear infinite;
+}
+
+.car-detail.spoiler {
+  width: 0;
+  height: 0;
+  top: 7px;
+  background: none;
+  border: 20px solid transparent;
+  border-bottom: 8px solid #ffe4e1;
+  border-left: 20px solid #ffe4e1;
+}
+
+.car-detail.back {
+  height: 20px;
+  width: 92px;
+  top: 15px;
+  left: 0px;
+}
+
+.car-detail.center {
+  height: 35px;
+  width: 75px;
+  left: 12px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 45px 40px;
+  border: 4px solid #ffe4e1;
+  background: none;
+  box-sizing: border-box;
+}
+
+.car-detail.center1 {
+  height: 35px;
+  width: 35px;
+  left: 12px;
+  border-top-left-radius: 30px;
+}
+
+.car-detail.front {
+  height: 20px;
+  width: 50px;
+  top: 15px;
+  left: 67px;
+  border-top-right-radius: 50px 40px;
+  border-bottom-right-radius: 10px;
+}
+
+.car-detail.wheel {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  top: 20px;
+  left: 12px;
+  border: 3px solid #333;
+  background: linear-gradient(45deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), linear-gradient(-45deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), linear-gradient(90deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), linear-gradient(0deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), radial-gradient(#ffe4e1 29%, transparent 30%, transparent 50%, #ffe4e1 51%), #333;
+  animation-name: spin;
+}
+
+.car-detail.wheel2 {
+  left: 82px;
+}
+
+/* body {
+  background: #000
+} */
+
+figure {
+  margin: 0;
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.4, 1.4);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  border-radius: 150px;
+  box-sizing: border-box;
+  animation: rotation 20s infinite linear;
+}
+
+figure div:after {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 1px solid #fff;
+  box-sizing: border-box;
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  animation: shuffle 2s infinite;
+}
+
+figure div:nth-child(1) {
+  transform: rotate(0deg)
+}
+
+figure div:nth-child(1):after {
+  animation-delay: -0.5s;
+}
+
+figure div:nth-child(2) {
+  transform: rotate(45deg)
+}
+
+figure div:nth-child(2):after {
+  animation-delay: -1s;
+}
+
+figure div:nth-child(3) {
+  transform: rotate(90deg)
+}
+
+figure div:nth-child(3):after {
+  animation-delay: -1.5s;
+}
+
+figure div:nth-child(4) {
+  transform: rotate(135deg)
+}
+
+figure div:nth-child(4):after {
+  animation-delay: -2s;
+}
+
+figure div:nth-child(5) {
+  transform: rotate(180deg)
+}
+
+figure div:nth-child(5):after {
+  animation-delay: -2.5s;
+}
+
+figure div:nth-child(6) {
+  transform: rotate(225deg)
+}
+
+figure div:nth-child(6):after {
+  animation-delay: -3s;
+}
+
+figure div:nth-child(7) {
+  transform: rotate(270deg)
+}
+
+figure div:nth-child(7):after {
+  animation-delay: -3.5s;
+}
+
+figure div:nth-child(8) {
+  transform: rotate(315deg)
+}
+
+figure div:nth-child(8):after {
+  animation-delay: -4;
+}
+
+@keyframes rotation {
+  100% {
+    transform: translate(-50%, -50%) rotate(-360deg) scale(1.4, 1.4);
+  }
+}
+
+@keyframes shuffle {
+  50% {
+    transform: scale(0.4, 0.4) rotate(-90deg);
+    border-radius: 50%;
+  }
+}
+
+@media (max-width: 576px) {
+  .typewriter {
+    left: 0;
+  }
+
+  label {
+    width: 100%;
+    height: 44px;
+  }
+}

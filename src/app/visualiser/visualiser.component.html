@@ -1,0 +1,527 @@
+<!-- <- loading animation for graph layout -->
+<span *ngIf='showPreloader'>
+  <main>
+    <div class="dank-ass-loader">
+      <div class="row">
+        <div class="arrow up outer outer-18"></div>
+        <div class="arrow down outer outer-17"></div>
+        <div class="arrow up outer outer-16"></div>
+        <div class="arrow down outer outer-15"></div>
+        <div class="arrow up outer outer-14"></div>
+      </div>
+      <div class="row">
+        <div class="arrow up outer outer-1"></div>
+        <div class="arrow down outer outer-2"></div>
+        <div class="arrow up inner inner-6"></div>
+        <div class="arrow down inner inner-5"></div>
+        <div class="arrow up inner inner-4"></div>
+        <div class="arrow down outer outer-13"></div>
+        <div class="arrow up outer outer-12"></div>
+      </div>
+      <div class="row">
+        <div class="arrow down outer outer-3"></div>
+        <div class="arrow up outer outer-4"></div>
+        <div class="arrow down inner inner-1"></div>
+        <div class="arrow up inner inner-2"></div>
+        <div class="arrow down inner inner-3"></div>
+        <div class="arrow up outer outer-11"></div>
+        <div class="arrow down outer outer-10"></div>
+      </div>
+      <div class="row">
+        <div class="arrow down outer outer-5"></div>
+        <div class="arrow up outer outer-6"></div>
+        <div class="arrow down outer outer-7"></div>
+        <div class="arrow up outer outer-8"></div>
+        <div class="arrow down outer outer-9"></div>
+      </div>
+    </div>
+  </main>
+
+</span>
+<!-- -> -->
+
+
+<div class="row">
+  <!-- <-analytics sidenav -->
+  <div id="mySidenav" class="sidenav row">
+
+    <a href="javascript:void(0)" class="closebtn hvr-grow-rotate" (click)="closeNav()">&times;</a>
+    <div class="col-sm-3">
+      <div class="col-sm-12 ">
+        <div class="score_board">
+          <p class="score_head">MAX Degree</p>
+          <h3 class="score">{{max_deg}}</h3>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="score_board">
+          <p class="score_head">MAX in-degree</p>
+          <h3 class="score">{{max_indeg}}</h3>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="score_board">
+          <p class="score_head">MIN Degree</p>
+          <h3 class="score">{{min_deg}}</h3>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="score_board">
+          <p class="score_head">MIN in-degree</p>
+          <h3 class="score">{{min_indeg}}</h3>
+        </div>
+      </div>
+    </div>
+    <div id="chart1" class="col-sm-9">
+      <mat-form-field appearance="fill">
+        <mat-label>Percentage share</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let op of chart_dropdown_options" [value]="op" (click)='chart_option_click(op)'>
+            {{op}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+  </div>
+  <!-- -> -->
+
+  <!-- <-top nav bar -->
+  <div id='top_bar' class='top-bar'>
+    <!-- <- open analytics sidenav -->
+    <span data-step='2' data-title='Graph Analytics'
+      data-intro="Know your Graph (Max degree / max in-deg , Min degree / min in-deg)  and Visualise graph distibution"
+      class="hvr-wobble-top btn_open_analytics_sidenav" (click)="openNav()">&#9776;</span>
+    <!-- -> -->
+    <!-- <- start demo tour -->
+    <button id='tourbtn' (click)="startTour()" type="button" class="btn-sm btn-info btn_tour hvr-grow-rotate">Start
+      Tour</button>
+    <!-- -> -->
+    <!-- <- search bar icon -->
+    <img src="assets/search.svg" id='search_box_icon' width='25' alt="search"
+      class=" animate__animated animate__slideInLeft">
+    <!-- -> -->
+    <!-- <- search box -->
+    <input data-step='1' data-title='Search Box' data-intro="Quick search any node by attribute" type="text"
+      placeholder="Pick one" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto"
+      (focus)="search_box_focus()" (blur)="search_box_not_focus()" id='search_box' class="searchbox" matInput
+      placeholder="search" autocomplete="off">
+    <mat-autocomplete #auto="matAutocomplete">
+      <!-- <mat-option (onSelectionChange)='option_click(option)' (click)='option_click(option)' class='optioncolor'
+        *ngFor="let option of filteredOptions | async" [value]="option"> -->
+      <mat-option (onSelectionChange)='option_click(option)' class='optioncolor'
+        *ngFor="let option of filteredOptions | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+    <!-- -> -->
+  </div>
+  <!-- -> -->
+
+  <!-- <-bottom right toolbar -->
+  <div id='bottom_bar' class='bottom-bar' style=" right: 0;">
+
+    <!-- <- remove graph -->
+    <img (click)="remove_graph()" id='remove_graph' src="assets/graph_remove.svg" height='20' width="25"
+      alt="Delete graph" data-toggle="tooltip" data-placement="top" title="Delete graph"
+      class="hvr-wobble-skew bottom_bar">
+    <!-- -> -->
+    <!-- <- Previous graph-->
+    <img id='previous_graph' src="assets/previous.svg" width="25" alt="Previous graph" data-toggle="tooltip"
+      data-placement="top" title="Previous graph" class="hvr-backward bottom_bar">
+    <!-- -> -->
+    <!-- <- current graph name and [N,E] count -->
+    <span id='current_graph' alt="Current graph" data-toggle="tooltip" data-placement="top" title="Current graph"
+      class="bottom_bar">{{files_uploaded[last_graph_index] }} |
+      N[{{current_graph_node_count}}] , E[{{current_graph_edge_count}}]</span>
+    <!-- -> -->
+    <!-- <- next graph -->
+    <img data-placement="left" data-step="6" data-title="Manage Graph"
+      data-intro="Delete Graphs, Navigate Between multiple Graphs" id='next_graph' src="assets/forward.svg" width="25"
+      alt="Next graph" data-toggle="tooltip" data-placement="top" title="Next graph" class="hvr-forward bottom_bar">
+    <!-- -> -->
+  </div>
+  <!-- bottom right toolbar-> -->
+
+  <!-- <-bottom left toolbar -->
+  <div data-step="5" data-title="Export Data"
+    data-intro="Export Graph data (Elements and connections) Download / Export Graph as Graphml / json / Images zip"
+    id='bottom_bar2' class='bottom-bar' style="  left: 0;">
+    <img [matMenuTriggerFor]="table_menu" src="assets/table2.svg" width="25" height='20' alt="Table"
+      data-toggle="tooltip" data-placement="top" title="Table" class="hvr-float">
+    <mat-menu class='download_menu' #table_menu="matMenu">
+      <span (click)="openDialog(1)" mat-menu-item>Elemetnts</span>
+      <span (click)="openDialog(2)" mat-menu-item>Connections</span>
+    </mat-menu>
+    <!-- <-Download graph -->
+    <img mat-button [matMenuTriggerFor]="download_menu" src="assets/download.svg" width="25" height='20' alt="Download"
+      data-toggle="tooltip" data-placement="top" title="Download" class="hvr-float">
+    <mat-menu class='download_menu' #download_menu="matMenu">
+      <span (click)="download_images()" mat-menu-item>Download Images<span *ngIf="list_of_images.length > 0"
+          class="badge badge-info badge_download_graph_images">{{list_of_images.length}}</span></span>
+      <span mat-menu-item (click)="download_json()">Download Json</span>
+      <span mat-menu-item (click)="download_graphml()">Download GraphML</span>
+    </mat-menu>
+    <!-- Donwload graph -> -->
+    <!-- <-capture image -->
+    <div class="hvr-float div_camera_icon">
+      <img (click)='capture_png()' src="assets/capture2.svg" width="25" height='20' alt="Capture graph"
+        data-toggle="tooltip" data-placement="top" title="Capture graph">
+      <span *ngIf="list_of_images.length > 0" class="badge badge-info"
+        style="position: absolute; margin-top: -10px;">{{list_of_images.length}}</span>
+    </div>
+    <!-- capture image-> -->
+  </div>
+  <!-- bottom left toolbar-> -->
+  <!-- <-main visual canvas -->
+  <div id='cy'>
+  </div>
+  <!-- <div id='navigator_ele' style="z-index: 1000;position:absolute; bottom: 0; left:0; border: 1px dashed blue; height: 20em; width: 20em;" ></div> -->
+  <!-- </div> -->
+  <div id='cy3d'>
+  </div>
+  <div *ngIf="render3d" class="scene-nav-info">Left-click: rotate, Mouse-wheel/middle-click: zoom, Right-click: pan
+  </div>
+  <!-- main visual canvas-> -->
+
+  <!-- <- legend -->
+  <div id='legend' class='legend slideLeft custom-scrollbar'>
+  </div>
+  <!--  legend-> -->
+
+  <!-- <-node Focus , expand , contract -->
+  <img src="assets/chevron-arrow-up.svg" class='hide init_position animate__animated animate__bounceInLeft'
+    id='expandfocus' alt="focus" data-toggle="tooltip" data-placement="right" title="Expand focus">
+  <img src="assets/crosshair.svg" id='focus' class='init_position ' alt="focus" data-toggle="tooltip"
+    data-placement="right" title="Focus" data-step="3"
+    data-intro="Click on node, press focus to expand and contract n degree network">
+  <img src="assets/chevron-arrow-down.svg" class='hide init_position animate__animated animate__bounceInLeft'
+    id='contractfocus' alt="focus" data-toggle="tooltip" data-placement="right" title="Contract focus">
+  <!-- Focus , expand , contract-> -->
+
+  <!-- <-right toolbar gear -->
+  <span class="gear" data-step="4" data-title="Style Graph" data-intro="Click to set style" (click)="openToolBar()"><i
+      class="fa fa-gear animate__animated animate__rotateIn animate__infinite	infinite"></i></span>
+  <!-- <- right style tool bar -->
+  <ngx-simplebar [options]="scrollbar_options" id="tool_bar" class="tool_bar">
+    <div>
+
+      <!-- right tool bar close btn -->
+      <a href="javascript:void(0)"
+        class="closebtn hvr-rotate animate__animated animate__rotateIn animate__infinite infinite"
+        (click)="closeToolBar()">&times;</a>
+      <!-- -> -->
+
+      <mat-accordion id='mataccordion' class="headers-align">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header class="hvr-bounce-to-right">
+            <mat-panel-title>
+              Set Size
+            </mat-panel-title>
+            <mat-panel-description>
+              Adjust Node, Edge Arrrow, Label Size
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="row" style=" padding: 1em;">
+            <mat-radio-group aria-label="Select an option">
+              <div class="col-sm-12" style="border: sandybrown 1px solid; padding: 1em;">
+                <span>Apply on :</span>
+                <mat-radio-button value="1" (change)="all_ele = false">selected Elemetnts
+                </mat-radio-button>
+                <mat-radio-button value="2" [checked]="all_ele" (change)="all_ele = true">All
+                  Elemetnts
+                </mat-radio-button>
+              </div>
+            </mat-radio-group>
+            <div class="col-sm-6" style="color: seashell;">Node Label Size</div>
+            <div class="col-sm-6">
+              <mat-slider (input)="nodeLabelSizeSlider($event)" thumbLabel tickInterval="1" min="1" max="20" step="1"
+                value="8"></mat-slider>
+            </div>
+            <div class="col-sm-6" style="color: seashell;">Arrow Size</div>
+            <div class="col-sm-6">
+              <mat-slider (input)="arrowSizeSlider($event)" thumbLabel tickInterval="0.1" min="0.1" max="5" step="0.1"
+                value="0.4"></mat-slider>
+            </div>
+            <div class="col-sm-6" style="color: seashell;">Node Size</div>
+            <div class="col-sm-6">
+              <mat-slider (input)="nodeSizeSlider($event)" thumbLabel tickInterval="1" min="2" max="100" step="1"
+                value="30"></mat-slider>
+            </div>
+            <mat-radio-group aria-label="Select an option">
+              <div class="col-sm-12" style="border: sandybrown 1px solid; padding: 1em;">
+                <span>Show Edge Label :</span>
+                <mat-radio-button value="1" (change)="toggel_show_ege_label(true)" style="color: seashell;">Show
+                </mat-radio-button>
+                <mat-radio-button value="2" [checked]="!show_edge_label" (change)="toggel_show_ege_label(false)"
+                  style="color: seashell;">Hide
+                </mat-radio-button>
+              </div>
+            </mat-radio-group>
+            <div *ngIf='show_edge_label'>
+              <mat-form-field appearance="fill">
+                <mat-label style="color: antiquewhite;">Select edge Label: </mat-label>
+                <mat-select>
+                  <mat-option *ngFor="let op of edge_label" [value]="op" (click)='edge_label_option_click(op)'>
+                    {{op}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+              <div>
+                <div class="col-sm-6" style="color: seashell;">Edge Label Size</div>
+                <div class="col-sm-6">
+                  <mat-slider (input)="edgeLabelSizeSlider($event)" thumbLabel tickInterval="1" min="1" max="20"
+                    step="1" value="8"></mat-slider>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-expansion-panel>
+        <br>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header class="hvr-bounce-to-left">
+            <mat-panel-title>
+              Style Selected
+            </mat-panel-title>
+            <mat-panel-description>
+              Hide, Highlight, Color Nodes, Color Edges
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <div class="row" style=" padding: 1em;">
+            <div class="col-sm-6">
+              <span id="hide"><img width="15" height="15" style="margin:5px" src="assets/hide.svg" alt="hide"
+                  data-toggle="tooltip" data-placement="right" titlea="hide selected">hide</span>
+            </div>
+            <div class="col-sm-6">
+              <span id="showAll"><img width="15" height="15" style="margin:5px" src="assets/unhide.svg" alt="unhide"
+                  data-toggle="tooltip" data-placement="right" titlea="unhide selected">Show All</span>
+            </div>
+            <div class="col-sm-6">
+              <span id="highlightNeighbors"><img width="15" height="15" style="margin:5px" src="assets/highlight.svg"
+                  alt="highlight" data-toggle="tooltip" data-placement="right" titlea="highlight">Highlight
+                Neighbors</span>
+            </div>
+
+            <div class="col-sm-6">
+              <span *ngIf="last_layout_name == 'fcose'" (click)="packComponents()">Pack</span>
+            </div>
+            <div class="col-sm-6">
+              <span>Color Selected Nodes<input [(colorPicker)]="color_value1" [style.background]="color_value1"
+                  (colorPickerChange)="changeNColor($event)" /> </span>
+            </div>
+            <div class="col-sm-6">
+              <span>Color Selected Edges<input [(colorPicker)]="color_value2" [style.background]="color_value2"
+                  (colorPickerChange)="changeEColor($event)" /> </span>
+            </div>
+            <div class="col-sm-6">
+              <img src="assets/size.svg" width="15" height="15" style="margin:5px"
+                style="display: inline-block; margin-right: 10px;">
+              <h6 style="display: inline-block;margin-right: 1em; color: seashell;">SIZE BY</h6>
+              <mat-form-field appearance="fill">
+                <mat-label style="color: antiquewhite;font-size: 15sp;">Size Attribute</mat-label>
+                <mat-select>
+                  <mat-option  (click)='set_node_size(val)'
+                    *ngFor="let val of numeric_node_attr" [value]="val">
+                    {{val}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-sm-6">
+              <img src="assets/color.svg" width="15" height="15" style="margin:5px"
+                style="display: inline-block; margin-right: 10px;">
+              <h6 style="display: inline-block;margin-right: 1em; color: seashell;">COLOR BY</h6>
+              <mat-form-field appearance="fill">
+                <mat-label style="color: antiquewhite;font-size: 15sp;">Color Attribute</mat-label>
+                <mat-select>
+                  <mat-option  (click)='set_node_color(val)'
+                    *ngFor="let val of str_node_attr" [value]="val">
+                    {{val}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <!--  -->
+          <hr style="background-color:#fff">
+          <div class="row">
+
+            <!-- <span *ngIf="!render3d" style="border: sandybrown 1px dashed; padding: .5em;"> -->
+            <div class="col-sm-6">
+              <span style="padding: .8em;" class="hvr-forward">
+                <mat-checkbox *ngIf="!render3d" [(ngModel)]="change_node_shape_by_legend">Change node shape
+                </mat-checkbox>
+              </span>
+            </div>
+            <div class="col-sm-6">
+              <span *ngIf='change_node_shape_by_legend' style="border: sandybrown 1px dashed; padding: .5em;">
+                <mat-radio-group aria-label="Select an option">
+                  <span>set node icon : </span>
+                  <br>
+                  <div class="col-sm-6">
+
+                    <mat-radio-button value="1" [checked]="!node_shape_from_node_data"
+                      (change)="node_shape_from_node_data = false">Automatically
+                    </mat-radio-button>
+                  </div>
+                  <div class="col-sm-6">
+
+                    <mat-radio-button value="2" (change)="node_shape_from_node_data = true">From node data
+                    </mat-radio-button>
+                  </div>
+                </mat-radio-group>
+              </span>
+
+
+            </div>
+            <!-- </span> -->
+          </div>
+        </mat-expansion-panel>
+      </mat-accordion>
+
+      <div class="row" style="margin-top: 5px;">
+        <div class="col-sm-6">
+          <span data-step="7" data-title="Lasso Tool" data-intro=" 1. To acctivate lasso (double click on empty space in graph and on 3rd click move mouse to start drawing. 2. Select lasso from style menu and click on empty area in graph to start drawing.)
+        " id="lassoTool" class="hvr-forward"><img width="15" height="15" style="margin:5px" src="assets/lasso-tool.svg"
+              alt="lasso tool" data-toggle="tooltip" data-placement="right" titlea="lasso">
+            Lasso</span>
+        </div>
+        <div class="col-sm-6">
+          <span *ngIf="!render3d" class="hvr-forward">
+            <mat-checkbox [(ngModel)]="enableHoverEffect">Enable node/edge Hover effect</mat-checkbox>
+          </span>
+        </div>
+        <div class="col-sm-6">
+          <span *ngIf="!render3d" class="hvr-forward">
+            <mat-checkbox alt="add image data to node, {'image' : 'url'} " id="showImageOnNode"
+              [(ngModel)]="isShowImageOnNode" (change)="showImageOnNode()">Show Image on node </mat-checkbox>
+            <label id="LabelForshowImageOnNode" *ngIf="isShowImageOnNode" style="color: aquamarine;">[require attribute
+              key named "image" and image url as it's value in node data]</label>
+          </span>
+        </div>
+        <div class="col-sm-6">
+          <span id="zoomToSelected" class="hvr-forward"><img width="15" height="15" style="margin:5px"
+              src="assets/zoom.svg" alt="zoom" data-toggle="tooltip" data-placement="right"
+              titlea="zoom on selected">Zoom
+            to Selected</span>
+        </div>
+      </div>
+
+
+      <!-- <span id="showHiddenNeighbors" >Show Hidden Neighbors of Selected</span> -->
+      <!-- <span id="removeSelectedHighlights" >Remove Selected Highlights</span>  -->
+      <!-- <span id="removeAllHighlights" >Remove All Highlights</span>  -->
+
+      <!-- </span> -->
+      <div class="row">
+        <div class="col-sm-6">
+          <span style="padding: .8em ; border: 1px darksalmon solid" data-step='8' data-title='Render 3D Graph'
+            data-intro="Open style menu from right and check Render 3D to display current graph in 3D space with Beautifull node and link hover effect, uncheck to show original graph">
+            <mat-checkbox class="hvr-forward animate__animated animate__pulse animate__infinite infinite animate_slow"
+              [(ngModel)]="render3d" (change)="render3dGraph()" style="color : crimson">Render 3D</mat-checkbox>
+          </span>
+        </div>
+        <div class="col-sm-6">
+          <span style="padding: .8em;" class="hvr-forward">
+            <mat-checkbox *ngIf="!render3d" [(ngModel)]="focus_on_searched_item">Focus searched node</mat-checkbox>
+          </span>
+        </div>
+
+      </div>
+
+      <br>
+      <!-- 3d options -->
+      <mat-accordion id='3dmataccordion' class="headers-align" style="display: none;">
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header class="hvr-bounce-to-right">
+            <mat-panel-title>
+              Style 3D Graph
+            </mat-panel-title>
+            <mat-panel-description>
+              Adjust Node (color, label)
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+          <br>
+          <mat-radio-group aria-label="Select an option">
+            <div class="col-sm-12" style="border: sandybrown 1px solid; padding: 1em;">
+              <span>Show Edge Label :</span>
+              <mat-radio-button value="1" (change)="toggel_show_ege_label(true)" style="color: seashell;">Show
+              </mat-radio-button>
+              <mat-radio-button value="2" [checked]="!show_edge_label" (change)="toggel_show_ege_label(false)"
+                style="color: seashell;">Hide
+              </mat-radio-button>
+            </div>
+          </mat-radio-group>
+          <!-- 1 -->
+          <div *ngIf='show_edge_label'>
+            <mat-form-field appearance="fill">
+              <mat-label style="color: antiquewhite;">Select edge Label: </mat-label>
+              <mat-select>
+                <mat-option *ngFor="let op of edge_label" [value]="op" (click)='edge_label_option_click(op)'>
+                  {{op}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <!-- 2 -->
+          <br>
+          <div class="row">
+            <div class="col-sm-6">
+              <img src="assets/color.svg" width="15" height="15" style="margin:5px"
+                style="display: inline-block; margin-right: 10px;">
+              <h6 style="display: inline-block;margin-right: 1em; color: seashell;">Color Node by:</h6>
+              <mat-form-field appearance="fill">
+                <mat-label style="color: antiquewhite;font-size: 15sp;">Color Attribute</mat-label>
+                <mat-select>
+                  <mat-option  (click)='set_node_color(val)'
+                    *ngFor="let val of str_node_attr" [value]="val">
+                    {{val}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <!-- 3 -->
+            <!-- <br> -->
+            <div class="col-sm-6">
+              <img src="assets/color.svg" width="15" height="15" style="margin:5px"
+                style="display: inline-block; margin-right: 10px;">
+              <h6 style="display: inline-block;margin-right: 1em; color: seashell;">Label Node:</h6>
+              <mat-form-field appearance="fill">
+                <mat-label style="color: antiquewhite;font-size: 15sp;">Label Attribute</mat-label>
+                <mat-select>
+                  <mat-option  (click)='set_node_label(val)'
+                    *ngFor="let val of str_node_attr" [value]="val">
+                    {{val}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+
+        </mat-expansion-panel>
+      </mat-accordion>
+      <label *ngIf="!render3d" style="margin-right: 10px; color: coral;">Run Layout:</label><br>
+      <button *ngIf="!render3d" style=" padding: 5px; margin: 5px;" (click)='reRunLayout("fcose")'
+        class="bttn-pill bttn-sm bttn-warning">Default layout</button>
+      <button *ngIf="!render3d" style=" padding: 5px; margin: 5px;" (click)='reRunLayout("concentric")'
+        class="bttn-pill bttn-sm bttn-success">Concentric layout by Degree</button>
+      <button *ngIf="!render3d" style=" padding: 5px; margin: 5px;" (click)='reRunLayout("d3Force")'
+        class="bttn-pill bttn-sm bttn-royal">Spring Force [slow & buggy 😅]</button>
+      <button *ngIf="!render3d" style=" padding: 5px; margin: 5px;" (click)='reRunLayout("dagre")'
+        class="bttn-pill bttn-sm  bttn-danger">Hierarchy</button>
+
+        <!-- 3d buttons -->
+        <!-- <label *ngIf="render3d" style="margin-right: 10px; color: coral;">Run Layout:</label><br>
+      <button *ngIf="render3d" style=" padding: 5px; margin: 5px;" (click)='reRunLayout("3ddag")'
+        class="bttn-pill bttn-sm bttn-warning">Collapse Graph</button> -->
+        <!--  -->
+      <!-- <button *ngIf="!render3d" style=" padding: 5px; margin: 5px;" (click)='reRunLayout("dagre")'
+        class="bttn-pill bttn-md bttn-primary">klay</button> -->
+
+
+
+
+    </div>
+  </ngx-simplebar>
+
+  <!-- right toolbar gear-> -->
+</div>
