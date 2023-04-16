@@ -1,0 +1,475 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd">
+  <key id="relation" for="edge" attr.name="relation" attr.type="string" />
+  <key id="gender" for="node" attr.name="gender" attr.type="string" />
+  <key id="node_shape" for="node" attr.name="node_shape" attr.type="string" />
+  <key id="name" for="node" attr.name="name" attr.type="string" />
+  <key id="image" for="node" attr.name="image" attr.type="string" />
+  <key id="id" for="node" attr.name="id" attr.type="string" />
+  <graph edgedefault="directed">
+    <node id="janamejaya">
+      <data key="id">janamejaya</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">janamejaya</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Madravti">
+      <data key="id">Madravti</data>
+	  <data key="image">assets/female.jpg</data>
+      <data key="name">Madravti</data>
+      <data key="gender">Female</data>
+	  <data key="node_shape">rectangle</data>
+    </node>
+    <node id="Parikshita">
+      <data key="id">Parikshita</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Parikshita</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Abhimanyu">
+      <data key="id">Abhimanyu</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Abhimanyu</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Uttara">
+      <data key="id">Uttara</data>
+	  <data key="image">assets/female.jpg</data>
+      <data key="name">Uttara</data>
+      <data key="gender">Female</data>
+	  <data key="node_shape">rectangle</data>
+    </node>
+    <node id="Arjuna">
+      <data key="id">Arjuna</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Arjuna</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Subhadra">
+      <data key="id">Subhadra</data>
+	  <data key="image">assets/female.jpg</data>
+      <data key="name">Subhadra</data>
+      <data key="gender">Female</data>
+	  <data key="node_shape">rectangle</data>
+    </node>
+    <node id="Prativindhya">
+      <data key="id">Prativindhya</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Prativindhya</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Draupadi">
+      <data key="id">Draupadi</data>
+	  <data key="image">assets/female.jpg</data>
+      <data key="name">Draupadi</data>
+      <data key="gender">Female</data>
+	  <data key="node_shape">rectangle</data>
+    </node>
+    <node id="Yudhishthira">
+      <data key="id">Yudhishthira</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Yudhishthira</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Sutasoma">
+      <data key="id">Sutasoma</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Sutasoma</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Bheema">
+      <data key="id">Bheema</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Bheema</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Shrutakarma">
+      <data key="id">Shrutakarma</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Shrutakarma</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Satanika">
+      <data key="id">Satanika</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Satanika</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Nakula">
+      <data key="id">Nakula</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Nakula</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Shrutasena">
+      <data key="id">Shrutasena</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Shrutasena</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Sahadeva">
+      <data key="id">Sahadeva</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Sahadeva</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="kunti">
+      <data key="id">kunti</data>
+	  <data key="image">assets/female.jpg</data>
+      <data key="name">kunti</data>
+      <data key="gender">Female</data>
+	  <data key="node_shape">rectangle</data>
+    </node>
+    <node id="Pandu">
+      <data key="id">Pandu</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Pandu</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Madri">
+      <data key="id">Madri</data>
+	  <data key="image">assets/female.jpg</data>
+      <data key="name">Madri</data>
+      <data key="gender">Female</data>
+	  <data key="node_shape">rectangle</data>
+    </node>
+    <node id="100_Kauravas">
+      <data key="id">100_Kauravas</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">100 Kauravas</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Gandhari">
+      <data key="id">Gandhari</data>
+	  <data key="image">assets/female.jpg</data>
+      <data key="name">Gandhari</data>
+      <data key="gender">Female</data>
+	  <data key="node_shape">rectangle</data>
+    </node>
+    <node id="Yuyutsu">
+      <data key="id">Yuyutsu</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Yuyutsu</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Sughada_Maid_of_Gandhari">
+      <data key="id">Sughada_Maid_of_Gandhari</data>
+	  <data key="image">assets/female.jpg</data>
+      <data key="name">Sughada (Maid of Gandhari)</data>
+      <data key="gender">Female</data>
+	  <data key="node_shape">rectangle</data>
+    </node>
+    <node id="Dhritarashtra">
+      <data key="id">Dhritarashtra</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Dhritarashtra</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Ambika">
+      <data key="id">Ambika</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Ambika</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Vyasa">
+      <data key="id">Vyasa</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Vyasa</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Ambalika">
+      <data key="id">Ambalika</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Ambalika</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Vichitravirya">
+      <data key="id">Vichitravirya</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Vichitravirya</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Shantanu">
+      <data key="id">Shantanu</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Shantanu</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Satyavati">
+      <data key="id">Satyavati</data>
+	  <data key="image">assets/female.jpg</data>
+      <data key="name">Satyavati</data>
+      <data key="gender">Female</data>
+	  <data key="node_shape">rectangle</data>
+    </node>
+    <node id="Bhisma">
+      <data key="id">Bhisma</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Bhisma</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Ganga">
+      <data key="id">Ganga</data>
+	  <data key="image">assets/female.jpg</data>
+      <data key="name">Ganga</data>
+      <data key="gender">Female</data>
+	  <data key="node_shape">rectangle</data>
+    </node>
+    <node id="Parashara">
+      <data key="id">Parashara</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Parashara</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <node id="Kuru">
+      <data key="id">Kuru</data>
+	  <data key="image">assets/male.png</data>
+      <data key="name">Kuru</data>
+      <data key="gender">Male</data>
+	  <data key="node_shape">triangle</data>
+    </node>
+    <edge source="janamejaya" target="Madravti" id="janamejayaMadravti0">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="janamejaya" target="Parikshita" id="janamejayaParikshita1">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Madravti" target="Parikshita" id="MadravtiParikshita2">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Parikshita" target="Madravti" id="ParikshitaMadravti3">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Parikshita" target="Abhimanyu" id="ParikshitaAbhimanyu4">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Parikshita" target="Uttara" id="ParikshitaUttara5">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Abhimanyu" target="Uttara" id="AbhimanyuUttara6">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Abhimanyu" target="Arjuna" id="AbhimanyuArjuna8">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Abhimanyu" target="Subhadra" id="AbhimanyuSubhadra9">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Uttara" target="Abhimanyu" id="UttaraAbhimanyu7">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Arjuna" target="Subhadra" id="ArjunaSubhadra10">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Arjuna" target="Draupadi" id="ArjunaDraupadi29">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Arjuna" target="kunti" id="Arjunakunti36">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Arjuna" target="Pandu" id="ArjunaPandu37">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Subhadra" target="Arjuna" id="SubhadraArjuna11">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Prativindhya" target="Draupadi" id="PrativindhyaDraupadi12">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Prativindhya" target="Yudhishthira" id="PrativindhyaYudhishthira13">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Draupadi" target="Yudhishthira" id="DraupadiYudhishthira22">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Draupadi" target="Bheema" id="DraupadiBheema23">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Draupadi" target="Arjuna" id="DraupadiArjuna24">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Draupadi" target="Nakula" id="DraupadiNakula25">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Draupadi" target="Sahadeva" id="DraupadiSahadeva26">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Yudhishthira" target="Draupadi" id="YudhishthiraDraupadi27">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Yudhishthira" target="kunti" id="Yudhishthirakunti32">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Yudhishthira" target="Pandu" id="YudhishthiraPandu33">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Sutasoma" target="Draupadi" id="SutasomaDraupadi14">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Sutasoma" target="Bheema" id="SutasomaBheema15">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Bheema" target="Draupadi" id="BheemaDraupadi28">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Bheema" target="kunti" id="Bheemakunti34">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Bheema" target="Pandu" id="BheemaPandu35">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Shrutakarma" target="Draupadi" id="ShrutakarmaDraupadi16">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Shrutakarma" target="Arjuna" id="ShrutakarmaArjuna17">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Satanika" target="Draupadi" id="SatanikaDraupadi18">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Satanika" target="Nakula" id="SatanikaNakula19">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Nakula" target="Draupadi" id="NakulaDraupadi30">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Nakula" target="Madri" id="NakulaMadri38">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Nakula" target="Pandu" id="NakulaPandu39">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Shrutasena" target="Draupadi" id="ShrutasenaDraupadi20">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Shrutasena" target="Sahadeva" id="ShrutasenaSahadeva21">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Sahadeva" target="Draupadi" id="SahadevaDraupadi31">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Sahadeva" target="Madri" id="SahadevaMadri40">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Sahadeva" target="Pandu" id="SahadevaPandu41">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="kunti" target="Pandu" id="kuntiPandu42">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Pandu" target="kunti" id="Pandukunti43">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Pandu" target="Madri" id="PanduMadri45">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Pandu" target="Ambalika" id="PanduAmbalika53">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Pandu" target="Vyasa" id="PanduVyasa54">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Pandu" target="Vichitravirya" id="PanduVichitravirya55">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Madri" target="Pandu" id="MadriPandu44">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="100_Kauravas" target="Gandhari" id="100 KauravasGandhari46">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Gandhari" target="Dhritarashtra" id="GandhariDhritarashtra48">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Yuyutsu" target="Sughada_Maid_of_Gandhari" id="YuyutsuSughada (Maid of Gandhari)47">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Sughada_Maid_of_Gandhari" target="Dhritarashtra" id="Sughada (Maid of Gandhari)Dhritarashtra50">
+      <data key="relation">vaishya_of</data>
+    </edge>
+    <edge source="Dhritarashtra" target="Gandhari" id="DhritarashtraGandhari49">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Dhritarashtra" target="Ambika" id="DhritarashtraAmbika51">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Dhritarashtra" target="Vyasa" id="DhritarashtraVyasa52">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Dhritarashtra" target="Vichitravirya" id="DhritarashtraVichitravirya56">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Ambika" target="Vichitravirya" id="AmbikaVichitravirya57">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Vyasa" target="Parashara" id="VyasaParashara67">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Vyasa" target="Shantanu" id="VyasaShantanu68">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Ambalika" target="Vichitravirya" id="AmbalikaVichitravirya58">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Vichitravirya" target="Ambika" id="VichitraviryaAmbika59">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Vichitravirya" target="Ambalika" id="VichitraviryaAmbalika60">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Vichitravirya" target="Shantanu" id="VichitraviryaShantanu61">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Vichitravirya" target="Satyavati" id="VichitraviryaSatyavati62">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Shantanu" target="Satyavati" id="ShantanuSatyavati63">
+      <data key="relation">husband_of</data>
+    </edge>
+    <edge source="Shantanu" target="Kuru" id="ShantanuKuru70">
+      <data key="relation">related_to</data>
+    </edge>
+    <edge source="Satyavati" target="Shantanu" id="SatyavatiShantanu64">
+      <data key="relation">wife_of</data>
+    </edge>
+    <edge source="Satyavati" target="Kuru" id="SatyavatiKuru71">
+      <data key="relation">related_to</data>
+    </edge>
+    <edge source="Bhisma" target="Shantanu" id="BhismaShantanu65">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Bhisma" target="Ganga" id="BhismaGanga66">
+      <data key="relation">son_of</data>
+    </edge>
+    <edge source="Ganga" target="Kuru" id="GangaKuru69">
+      <data key="relation">related_to</data>
+    </edge>
+    <edge source="Parashara" target="Kuru" id="ParasharaKuru72">
+      <data key="relation">related_to</data>
+    </edge>
+  </graph>
+</graphml>
