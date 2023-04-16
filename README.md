@@ -81,6 +81,15 @@
 ![switch graphml](https://media.giphy.com/media/ZYgtaTloSPG9xuQKrP/giphy.gif)
 
 
+## setup
+1. clone repo
+2. last tested:
+   	Angular CLI: 8.3.29
+	Node: 14.20.1
+	OS: win32 x64
+	Angular: 8.2.14
+3. npm install
+4. ng serve
 
 ## Development server
 
