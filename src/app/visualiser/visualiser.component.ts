@@ -30,7 +30,7 @@ import layoutUtilities from 'cytoscape-layout-utilities';
 import * as saveAs from 'file-saver';
 import * as $ from 'jquery';
 import * as JSZip from 'jszip';
-import * as graphml from 'node_modules/cytoscape-graphml/cytoscape-graphml.js';
+import * as graphml from  '../../../lib/cytoscape.js-graphml-master';
 import * as cytoscapePanzoom from 'node_modules/cytoscape-panzoom/cytoscape-panzoom.js';
 import * as viewUtilities from 'node_modules/cytoscape-view-utilities/cytoscape-view-utilities.js';
 import cytoscape from 'node_modules/cytoscape/dist/cytoscape.min.js';
@@ -345,6 +345,7 @@ export class VisualiserComponent implements OnInit {
 
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
+    console.log(filterValue);
     return this.options.filter(option => option.toLowerCase().includes(filterValue));
   }
   nodeSizeSlider(event) {
@@ -1440,7 +1441,7 @@ export class VisualiserComponent implements OnInit {
       this.cy.graphml(graphml_data);
     }
     catch(err){
-      
+      console.log(err);
       this.handle_graph_load_error(err,graphml_data)
       }
 
@@ -1913,6 +1914,7 @@ export class VisualiserComponent implements OnInit {
     }
   }
    parseXml(xml) {
+    console.log("parse in");
     let  ActiveXObject:any;
 
     var dom = null;

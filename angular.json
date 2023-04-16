@@ -52,8 +52,10 @@
               "./node_modules/datatables.net-buttons/js/buttons.flash.js",
               "./node_modules/datatables.net-buttons/js/buttons.html5.js",
               "./node_modules/datatables.net-buttons/js/buttons.print.js",
-              "./node_modules/intro.js/intro.js"
+              "./node_modules/intro.js/intro.js",
+              "lib/cytoscape.js-graphml-master/cytoscape-graphml.js"
             ]
+            // lib/cytoscape.js-graphml-master/cytoscape-graphml.js adding this, as made change to node module.
           },
           "configurations": {
             "production": {

@@ -1,0 +1,21 @@
+{
+  "name": "cytoscape-graphml",
+  "description": "Import or export the graph in GraphML format.",
+  "main": "cytoscape-graphml.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iVis-at-Bilkent/cytoscape.js-graphml.git"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "keywords": [
+    "cytoscape",
+    "cyext"
+  ],
+  "license": "MIT"
+}

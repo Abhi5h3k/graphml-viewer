@@ -16,7 +16,7 @@ export class DataServiceService {
   private files_list = new BehaviorSubject(this.files_uploaded);
   public share_file_list = this.files_list.asObservable();
   constructor() { }
-
+  
   update_show_graph_screen(value : boolean){
     this.show_graph_screen.next(value);
   }
@@ -24,7 +24,6 @@ export class DataServiceService {
     this.uploading.next(value);
   }
   set_files_uploaded(values){
-     
     this.files_list.next(values);
   }
 }

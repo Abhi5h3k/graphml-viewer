@@ -1,0 +1,44 @@
+{
+  "name": "cytoscape-graphml",
+  "version": "1.0.6",
+  "description": "Import or export the graph in GraphML format.",
+  "main": "cytoscape-graphml.js",
+  "spm": {
+    "main": "cytoscape-graphml.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/iVis-at-Bilkent/cytoscape.js-graphml.git"
+  },
+  "keywords": [
+    "cytoscape",
+    "cyext"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iVis-at-Bilkent/cytoscape.js-graphml/issues"
+  },
+  "homepage": "https://github.com/iVis-at-Bilkent/cytoscape.js-graphml",
+  "devDependencies": {
+    "browserify": "^11.2.0",
+    "gulp": "^3.9.0",
+    "gulp-derequire": "^2.1.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-prompt": "^0.1.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-shell": "^0.5.0",
+    "gulp-util": "^3.0.6",
+    "jshint-stylish": "^2.0.1",
+    "node-notifier": "^4.3.1",
+    "run-sequence": "^1.1.4",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "peerDependencies": {
+    "cytoscape": "^3.2.0",
+    "jquery": "^1.7.0 || ^2.0.0 || ^3.0.0"
+  }
+}

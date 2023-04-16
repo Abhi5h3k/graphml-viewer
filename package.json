@@ -44,7 +44,6 @@
     "cytoscape-euler": "^1.2.2",
     "cytoscape-expand-collapse": "^4.0.0",
     "cytoscape-fcose": "^2.0.0",
-    "cytoscape-graphml": "^1.0.6",
     "cytoscape-klay": "^3.1.4",
     "cytoscape-layout-utilities": "^1.0.2",
     "cytoscape-navigator": "^2.0.1",
